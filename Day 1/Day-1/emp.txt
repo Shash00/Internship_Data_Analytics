@@ -1,0 +1,9 @@
+1,Niranjan,M.tech,80000,ISE
+2,Shashank,phd,75000,CSE
+3,Praneeth,phd,78000,ECE
+4,Sandy,phd,70000,ISE
+5,Joy,B.tech,95000,CSE
+6,Praneeth,M.tech,68000,ECE
+7,Vicky,,B.tech,80000,ISE
+8,Viggu,M.tech,55000,CSE
+9,Rocky,B.tech,28000,ECE
