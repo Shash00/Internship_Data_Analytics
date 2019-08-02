@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>EMI calculator</title>
+</head>
+<body>
+    <div style="margin-bottom:1.5rem; text-align:center">
+    </div>
+
+    <form style="width:200px; margin: 0 auto;">
+        <fieldset>
+            <legend>EMI calculator</legend>
+            <div id="screen"
+                style="width:220px;height:40px;background-color:bisque;padding:10px;font-size:2rem;margin-bottom:10px"></div>
+            </div>
+            <input style="width:236px;height:20px;margin-bottom:5px;" type="number", id="amount">
+            <input style="width:236px;height:20px;margin-bottom:5px;" type="number", id="time">
+            <input style="width:236px;height:20px;margin-bottom:5px;" type="number", id="rate">
+            <button id="button" type="button">Calculate</button>
+
+        </fieldset>
+    </form>
+
+    <script>
+        button.addEventListener('click', calcInterest)
+        function calcInterest() {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let duration = parseFloat(document.getElementById("time").value);
+            let rate = parseFloat(document.getElementById("rate").value)/1200;
+            let emi =   (amount * rate / (1 - (Math.pow(1/(1+rate),duration)))).toFixed(2);
+            document.getElementById("screen").innerHTML = emi.toString();
+        }
+        
+    </script>
+</body>
+</html>

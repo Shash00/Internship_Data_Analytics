@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main1.css">
+    <title>Mood</title>
+</head>
+<body>
+    <h1>How are you feeling today.?</h1>
+
+    <div id="row">
+        <img src="images/happy.jfif" alt="Happy" style="cursor:pointer" width="300px" onclick="showmessage('happy')" > &nbsp;
+        <img src="images/sleepy.png" alt="Sleepy" style="cursor:pointer" width="237px" onclick="showmessage('sleepy')"> &nbsp;
+        <img src="images/angry.png" alt="Angry" style="cursor:pointer" width = "250px" onclick="showmessage('angry')">
+
+    </div>
+
+    <div id="msg"></div>
+
+    <script>
+        function showmessage (f) {
+            if(f === "happy"){
+                msg = "Ok"
+            }
+            else if (f === "sleepy"){
+                msg = "Okk"
+            }
+            else{
+                msg = "Good"
+            }
+
+            document.getElementById("msg").innerHTML = "<marquee><h1>" +msg+ "</h1></marquee>";
+        }
+    </script>
+</body>
+</html>
