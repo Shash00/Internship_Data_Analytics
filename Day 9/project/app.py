@@ -55,18 +55,21 @@ def c_delete_student():
 
 # Registrations and summary reports 
 def c_company_ws_count():
-    pass
-def c_student_ws_count():
-    pass
+    db.company_ws_count()
+
 def c_ws_student_reports():
-    pass
+    db.ws_student_reports()
 
 def c_reg_stu_internship():
-    pass
+    usn = int(input('Enter the student USN: '))
+    iid = int(input('Enter the Internship Id: '))
+    status = input('Enter the status: ')
+    db.add_student_internship(usn,iid,status)
 
 def c_update_stu_intership_status():
-    pass
-
+    usn = int(input('Enter student USN: '))
+    status = input("Enter updated status: ")
+    db.update_stu_intership_status(usn,status)
 
 while True:
     try:

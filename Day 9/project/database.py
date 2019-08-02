@@ -36,7 +36,7 @@ def search_internship_by_name(name):
         t = PrettyTable(['ID','Name','Company','Year','Status'])
         with db.DbContext() as conn:
             cursor = conn.cursor()
-            cursor.execute("select id,iname,company,i_year,status from internship where iname = ?",(name,))
+            cursor.execute("select id,iname,company,i_year,status from internship where iname like '%'?'%'",(name,))
             rows = cursor.fetchall()
             for row in rows:
                 t.add_row([row[0],row[1],row[2],row[3],row[4]])
@@ -124,30 +124,50 @@ def delete_student(usn):
     except Exception as e:
         print(e)
 
-def add_student_internship(iid,usn,status):
+def add_student_internship(usn,iid,status):
     try:
         with db.DbContext() as conn:
             cursor = conn.cursor()
-            cursor.execute("insert into regi values(iid,usn,status)",(iid,usn,status))
+            cursor.execute("insert into registration values(?,?,?)",(iid,usn,status))
 
     except Exception as e:
         print(e)
 
-def view_all_reg_student():
-    pass
 
 def company_ws_count():
-    pass
-def student_ws_count():
-    pass
+        try:    
+                t = PrettyTable(['Id','Company','Count'])
+                with db.DbContext() as conn:
+                        cursor = conn.cursor()
+                        rows = cursor.execute('select r.iid, i.company, count(*) from registration r JOIN internship i on (r.iid = i.id) group by i.company')
+                        for row in rows:
+                                t.add_row(row)
+                        print(t)
+        except Exception as e:
+                print(e)
+
+
 def ws_student_reports():
-    pass
+    try:    
+        t = PrettyTable(['USN','Name','Internship name','Company','Year', 'Status'])
+        with db.DbContext() as conn:
+                cursor = conn.cursor()
+                rows = cursor.execute("select r.usn, s.name, i.iname, company, i_year, r.status from registration r JOIN student s on (r.usn = s.usn) JOIN internship i on (r.iid = i.id) ")
+                for row in rows:
+                        t.add_row(row)
+                print(t)
+    except Exception as e:
+                print(e)
 
-def reg_stu_internship():
-    pass
+def update_stu_intership_status(usn,status):
+    try:
+        with db.DbContext() as conn:
+            cursor = conn.cursor()
+            cursor.execute("UPDATE registration set status = ? where usn = ?",(status,usn))
+            print(f"Status: {status} successfully updated")
 
-def update_stu_intership_status():
-    pass
+    except Exception as e:
+        print(e)
 
 
 def _view_internship_list(lst):
