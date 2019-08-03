@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/800024b3a8.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js"></script>
 
     <title>WishList</title>
 </head>
@@ -76,23 +78,30 @@
                 <div class="row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6"></div>
-                    <form>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name here">
-                        </div>
-                        <div class="form-group">
-                            <label>Qualification</label>
-                            <input type="text" class="form-control" id="qualification"
-                                placeholder="Enter Qualification">
-                        </div>
-                        <div class="form-group">
-                            <label>Department</label>
-                            <input type="text" class="form-control" id="qualification" placeholder="Enter Department">
-                        </div>
-                        <div>
-                                <button type="button" class="btn btn-primary">Add Faculty</button>
-                        </div>
+                    <form id="form1" name="form1">
+                        <fieldset>
+                            <legend>Enter Faculty Details</legend>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control required" id="name" placeholder="Enter name here">
+                            </div>
+                            <div class="form-group">
+                                <label>Qualification</label>
+                                <input type="text" class="form-control" id="qualification"
+                                    placeholder="Enter Qualification">
+                            </div>
+                            <div class="form-group">
+                                <label>Department</label> <br>
+                                <select id="department" style="width:220px">
+                                    <option value="CSE">CSE</option>
+                                    <option value="ISE">ISE</option>
+                                    <option value="ECE">ECE</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary" id="btnAdd">Add Faculty</button>
+                            </div>
+                        </fieldset>
                     </form>
                     <div class="col-sm-3"></div>
                 </div>
@@ -100,25 +109,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Optional JavaScript -->
@@ -132,6 +122,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    
 </body>
 
 </html>
