@@ -8,23 +8,90 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>FMS</title>
 
+    <script src="https://kit.fontawesome.com/800024b3a8.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="container mt-5">
-        <h3>MITE Faculty</h3>
-        <div class="row">
-            <div class="col-sm-6 ml-auto mr-auto offset-3">
-                <input type="text" name="search" id = "search" class="form-controller block">
+    
+    <div class="container">
+        <center>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">MITE FACULTY</h1> <br>
+                    <button id="idViewAll" class="btn btn-primary">
+                        View All
+                    </button>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Add New Faculty
+                    </button>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-sm-6 offset-3">
+                        <input type="text" name="search" id="search" class="form-controller block"
+                            placeholder="Search Faculty Name">
+
+                    </div>
+                </div>
+            </div>
+        </center>
+        <br>
+
+        <div id="idTable" class="table table-hover table-striped thead-dark">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Faculty</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form -->
+                    <form>
+                        <div class="form-group">
+                            <label>Faculty Name</label>
+                            <input type="text" class="form-control" id="Idname" placeholder="Enter Faculty Name">
+                        </div>
+                        <div>
+                            <label>Qualification</label>
+                            <input type="text" class="form-control" id="Iqualification"
+                                placeholder="Enter Qualification">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Department</label>
+                            <select class="form-control" id="Iddepartment">
+                                <option value="CS">CS</option>
+                                <option value="IS">IS</option>
+                                <option value="EC">EC</option>
+                                <option value="ME">ME</option>
+                                <option value="CV">CV</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="idBtnClose">Close</button>
+                    <button type="button" class="btn btn-primary" id="idBtnAdd">Add</button>
+                </div>
             </div>
         </div>
     </div>
-    <div id="idTable">
-    </div>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
