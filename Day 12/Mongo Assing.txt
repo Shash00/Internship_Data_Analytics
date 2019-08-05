@@ -1,0 +1,124 @@
+1.
+db.faculty.find({
+    
+    })
+
+2.
+db.faculty.find({
+    
+    }).count()
+
+    
+3.
+db.faculty.find({
+    
+    qualification : "Ph.D"
+    })
+
+   
+4. 
+db.faculty.find({
+    
+    exp: {$gt:8, $lte:12}
+    
+    })
+
+
+5.
+db.faculty.find({
+    
+    subjects: {$in:["MATHS", "NETWORKING"]}
+    })
+
+6.
+db.faculty.find({
+        
+    $and:[
+    {subjects: "MATHS"}, {age: {$gt:30}}, {qualification:"Ph.D"}]
+    })
+
+7.
+
+
+8.
+db.faculty.insert(
+{"name":"Suresh Babu", "age":55,"gender":"M","exp":25,subjects:["MATHS","DE"],"type":"Full Time", "qualification":"Ph.D"})
+    
+9.
+db.faculty.updateMany(
+
+    {},
+    {$inc:{age:1, exp:1 }}
+
+)
+
+10.
+db.faculty.update(
+
+    {name:"Sivani"}, {$set:{qualification:"Ph.D", type:"Full Time"} }
+        
+
+)
+11.
+db.faculty.updateMany(
+
+    {subjects: "MATHS"}, {$push:{subjects: "ML"} }
+        
+
+)
+
+12.
+db.faculty.remove(
+{
+    age:{$gt:55}
+})
+
+
+13.
+db.faculty.find(
+{},
+{_id:0, name:1, qualification:1 }
+)
+
+14.
+db.faculty.find(
+{},
+{_id:0, name:1, qualification:1, exp:1 }
+).sort({exp:1})
+
+15.
+db.faculty.find(
+{}
+).sort({age:-1}).limit(5)
+
+16.
+db.faculty.find(
+{subjects:"JAVA"} ,{_id:0, name:1}
+)
+
+17.
+db.faculty.find(
+{subjects:"JAVA"} ,{_id:0, name:1}
+).count()
+
+18.
+db.faculty.find(
+{
+    subjects: "JAVA", gender: "F"
+}
+  ).count()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

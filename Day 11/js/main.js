@@ -21,9 +21,6 @@ function showResult(searchStr){
 
 function showTable(data){
     str = "<table class = 'table'>";
-    if(!data[0]){
-        str += <center><h1>Not found</h1></center>
-    }
     str += "<tr><th>Name</th><th>Qualification</th><th>Department</th><th>Status</th></tr>";
 
     for(i=0;i<data.length;i++){
