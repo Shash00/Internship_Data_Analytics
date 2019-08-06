@@ -11,4 +11,4 @@ query = {}
 project = {"name":1, "salary":1, "_id":0}
 for doc in collection.find(query).sort([("name", m.ASCENDING)]):
     print(doc["name"])
- 
+    
