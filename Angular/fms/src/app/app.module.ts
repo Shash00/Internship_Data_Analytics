@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { LabComponent } from './lab/lab.component';
 import { WhoursComponent } from './whours/whours.component';
 import { AppService } from './app.service';
+import { DataFeederService } from './shared/datafeeder.service';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 
 
@@ -22,9 +24,10 @@ import { AppService } from './app.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2GoogleChartsModule
   ],
-  providers: [AppService],
+  providers: [AppService,DataFeederService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
